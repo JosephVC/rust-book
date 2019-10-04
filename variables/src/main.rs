@@ -78,4 +78,18 @@ fn main() {
     let second = a[1];
 
     println!("{}", first);
+
+    println!("hello world");
+
+    another_function();
+
+    yet_another_function(2);
+}
+
+fn another_function() {
+    println!("another function")
+}
+
+fn yet_another_function(x) {
+    println!("{}", x);
 }
