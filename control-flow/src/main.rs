@@ -1,5 +1,6 @@
 fn main() {
 
+
     // straight up loops
     let mut counter = 0;
 
@@ -21,7 +22,27 @@ fn main() {
         number -= 1;
     }
 
-    println!("asfafaff")
+    println!("asfafaff");
+
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("the value in a  is {}", a[index]);
+
+        index += 1;
+    }
+
+    let foo = [10, 20, 30, 40, 50];
+
+    for element in foo.iter() {
+        println!("the value in foo is: {}", element);
+    }
+
+    for number in (1..4).rev() {
+        println!("{}", number);
+    }
+    println!("boom");
 
     // for loops
 
