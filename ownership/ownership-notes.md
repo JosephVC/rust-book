@@ -14,3 +14,14 @@ Both the stack and the heap are part of memory that is available to your program
 5.  the problems of adequately managing the data on the heap are important.  you need to track what parts of data are in the heap, minimuzing duplicate data, and cleaning up unused data.  managing heap data is why ownership exists
 
 ## Ownership rules
+
+* each value in rust has a variable called an *owner*
+* there can only be one owner at a time
+* when an owner goes out of scope, the value will be dropped
+
+## Variable Scope
+
+if you define a variable:
+* *let s = "Hello";*
+
+the scope of s is non-existant before being declared, but when it is finally declared it is valid from that point onward
