@@ -25,3 +25,10 @@ if you define a variable:
 * *let s = "Hello";*
 
 the scope of s is non-existant before being declared, but when it is finally declared it is valid from that point onward
+Now, after you do a thing with s, the *scope ends*
+
+* a variable is valid from when it is declared
+* it stays valid until it goes out of scope
+
+## The *String* Type
+
