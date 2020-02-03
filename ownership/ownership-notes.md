@@ -39,4 +39,14 @@ If we don't want to use a string literal, due to it being immutable or if we wan
 let s = String::from("hello");
 `
 
-the double-quotes
+the double-quotes essentially allows us to mutate the string type, and the difference is how these two types handle memory.  
+
+## Memory and Allocation
+
+With the above String type, there needs to be an amount of memory allocated to the heap, an amount that is unknown at compile time.  What this style of memory allocation means is:
+* at runtime, memory must be allocated by the OS
+* when we are done using the String, we need a way to return this memory to the OS
+
+The first part is done when we call `String::from`, as it requests memory it needs. 
+
+The second part is hard because Rust has no garbage collection built-in.  Traditionally the user has had to take care of managing memory on their own, which is difficult and allows bugs to be introduced easily.  
