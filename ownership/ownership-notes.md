@@ -31,4 +31,12 @@ Now, after you do a thing with s, the *scope ends*
 * it stays valid until it goes out of scope
 
 ## The *String* Type
+This is an example of how ownership works.
 
+If we don't want to use a string literal, due to it being immutable or if we want to store user input, we can use other version of the string. There's the String type we can use, which is stored on the  heap and therefor can store a range in memory. 
+
+`
+let s = String::from("hello");
+`
+
+the double-quotes
