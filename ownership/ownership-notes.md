@@ -49,4 +49,11 @@ With the above String type, there needs to be an amount of memory allocated to t
 
 The first part is done when we call `String::from`, as it requests memory it needs. 
 
-The second part is hard because Rust has no garbage collection built-in.  Traditionally the user has had to take care of managing memory on their own, which is difficult and allows bugs to be introduced easily.  
+The second part is hard because Rust has no garbage collection built-in.  Traditionally the user has had to take care of managing memory on their own, which is difficult and allows bugs to be introduced easily.  Rust, on the other hand, is built to return memory once a variable is out of scope.  (This is likely one reason why rust complains when you initialize a variable to don't use it; this makes it harder to free up the memory used by the variable as it's  not clear where that variable runs out of scope. )  
+
+when a variable finally goes out of scope, rust will call the `drop` function, and is invoked in the background at the end of a curly  bracket.
+
+Now, suppose we wanted to define a string using `String::from('hello')` per the above.  Under the hood, this String is made up of three parts:
+* a pointer to where the string is in memory
+* the length - len() - of the string; this is how much memory the contents of the string is using
+* the capacity of the string; how much memory the `String`, in bytes, the `String` has received from the OS
